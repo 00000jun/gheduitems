@@ -40,8 +40,8 @@ with st.expander('검수용 데이터프레임', expanded=True):
             )
         },
         num_rows='dynamic',
-        width=7000,
-        height=3000,
+        width=3000,
+        height=500,
         )
 
 
