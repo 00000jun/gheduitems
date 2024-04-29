@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-from streamlit_dynamic_filters import DynamicFilters
 
 st.header("물품조사 페이지", divider='rainbow')
 
