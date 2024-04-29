@@ -27,7 +27,7 @@ merged_df = pd.merge(df, pre_url_df, on='물품목록번호', how='left')
 
 
 # 데이터프레임 후처리 (컬럼 인덱싱)
-merged_df = merged_df[['순','이미지주소_x', '물품목록번호', '물품분류명', '품명규격', '등록수량', '검수수량']]
+merged_df = merged_df[['순','이미지주소', '물품목록번호', '물품분류명', '품명규격', '등록수량', '검수수량']]
 
 
 # 처리 후 데이터프레임
@@ -35,7 +35,7 @@ with st.expander('검수용 데이터프레임', expanded=True):
     result = st.data_editor(
         merged_df,
         column_config={
-            "이미지주소_x": st.column_config.ImageColumn(
+            "이미지주소": st.column_config.ImageColumn(
                 "미리보기", help="클릭시 확대"
             )
         },
