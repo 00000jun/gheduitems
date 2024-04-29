@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from streamlit_dynamic_filters import DynamicFilters
 
 st.header("물품조사 페이지", divider='rainbow')
 
@@ -27,11 +28,12 @@ merged_df = pd.merge(df, pre_url_df, on='물품목록번호', how='left')
 
 
 # 데이터프레임 후처리 (컬럼 인덱싱)
-merged_df = merged_df[['순','이미지주소', '물품목록번호', '물품분류명', '품명규격', '등록수량', '검수수량']]
+merged_df = merged_df[['순','운용부서','이미지주소', '물품목록번호', '물품분류명', '품명규격', '등록수량', '검수수량']]
 
 
 # 처리 후 데이터프레임
 with st.expander('검수용 데이터프레임', expanded=True):
+    # 데이터프레임 출력
     result = st.data_editor(
         merged_df,
         column_config={
